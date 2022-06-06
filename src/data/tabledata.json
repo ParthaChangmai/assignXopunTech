@@ -1,0 +1,103 @@
+[
+	{
+		"packageName": "Test 1",
+		"providerOperatorCommissionInfos": [
+			{
+				"commissionInfoIndex": 0,
+				"apiSlabs": [
+					{
+						"min": 0,
+						"max": 100,
+						"commission": 10,
+						"commissionType": "COMMISSION",
+						"amountType": "FIXED",
+						"tds": 12,
+						"gst": 0
+					}
+				],
+				"operatorName": "Jio",
+				"operatorIdentifier": "74a00b21-012b-4fb4-a6d5-3a87653b15ac",
+				"operatorCategory": "PREPAID"
+			}
+		]
+	},
+	{
+		"packageName": "Test 2",
+		"providerOperatorCommissionInfos": [
+			{
+				"commissionInfoIndex": 0,
+				"apiSlabs": [
+					{
+						"min": 0,
+						"max": 100,
+						"commission": 0,
+						"commissionType": "COMMISSION",
+						"amountType": "FIXED",
+						"tds": 0,
+						"gst": 0
+					},
+					{
+						"min": 101,
+						"max": 200,
+						"commission": 0,
+						"commissionType": "SURCHARGE",
+						"amountType": "PERCENT",
+						"tds": 0,
+						"gst": 0
+					}
+				],
+				"operatorName": "Jio",
+				"operatorIdentifier": "74a00b21-012b-4fb4-a6d5-3a87653b15ac",
+				"operatorCategory": "PREPAID"
+			},
+			{
+				"commissionInfoIndex": 1,
+				"apiSlabs": [
+					{
+						"min": 0,
+						"max": 1000,
+						"commission": 0,
+						"commissionType": "SURCHARGE",
+						"amountType": "PERCENT",
+						"tds": 0,
+						"gst": 0
+					},
+					{
+						"min": 1001,
+						"max": 2000,
+						"commission": 0,
+						"commissionType": "COMMISSION",
+						"amountType": "FIXED",
+						"tds": 0,
+						"gst": 0
+					}
+				],
+				"operatorName": "Airtel",
+				"operatorIdentifier": "e14ddeba-40cd-4956-9645-aa4f92f749fc",
+				"operatorCategory": "PREPAID"
+			}
+		]
+	},
+	{
+		"packageName": "Test 3",
+		"providerOperatorCommissionInfos": [
+			{
+				"commissionInfoIndex": 0,
+				"apiSlabs": [
+					{
+						"min": 0,
+						"max": 1000,
+						"commission": 1,
+						"commissionType": "SURCHARGE",
+						"amountType": "PERCENT",
+						"tds": 1,
+						"gst": 25
+					}
+				],
+				"operatorName": "Jio",
+				"operatorIdentifier": "74a00b21-012b-4fb4-a6d5-3a87653b15ac",
+				"operatorCategory": "PREPAID"
+			}
+		]
+	}
+]
