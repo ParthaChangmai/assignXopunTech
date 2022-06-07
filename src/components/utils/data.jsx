@@ -5,6 +5,7 @@ export const columns = [
 		title: 'Package Name',
 		dataIndex: 'packageName',
 		key: 'packageName',
+		align: 'center',
 	},
 
 	{
@@ -13,20 +14,13 @@ export const columns = [
 		key: 'providerOperatorCommissionInfos',
 		render: (operatorInfo) => {
 			return operatorInfo.map(({ operatorCategory, operatorName }) => (
-				<div>
+				<div className="row">
 					<p>{operatorName}</p>
 					<p>{`(${operatorCategory})`}</p>
 				</div>
 			));
 		},
-		// onCell: (operatorInfo) => {
-		// 	if (operatorInfo.length > 1) {
-		// 		return {
-		// 			// colSpan: 2,
-		// 			rowSpan: 2,
-		// 		};
-		// 	}
-		// },
+		align: 'center',
 	},
 
 	{
@@ -35,18 +29,12 @@ export const columns = [
 		key: 'providerOperatorCommissionInfos',
 		render: (operatorInfo) => {
 			return operatorInfo.map(({ apiSlabs }) =>
-				apiSlabs.map(({ min, max }) => <p>{`[${min}-${max}]`}</p>)
+				apiSlabs.map(({ min, max }) => (
+					<div className="row">{`[${min}-${max}]`}</div>
+				))
 			);
 		},
-		onCell: (operatorInfo) => {
-			return {
-				colSpan: operatorInfo.length,
-				rowSpan: 1,
-				style: {
-					textAlign: 'center',
-				},
-			};
-		},
+		align: 'center',
 	},
 	{
 		title: 'Commission',
@@ -58,18 +46,15 @@ export const columns = [
 				render: (operatorInfo) => {
 					return operatorInfo.map(({ apiSlabs }) =>
 						apiSlabs.map(({ commission, amountType }) => (
-							<p>{`${commission} ${amountType === 'FIXED' ? '₹' : '%'}`}</p>
+							<div className="row">
+								{commission}{' '}
+								{(amountType === 'FIXED' && '₹') ||
+									(amountType === 'PERCENT' && '%')}
+							</div>
 						))
 					);
 				},
-				onCell: () => {
-					return {
-						style: {
-							textAlign: 'center',
-							borderRight: '1px solid #e8e8e8',
-						},
-					};
-				},
+				align: 'center',
 			},
 			{
 				title: 'C/S',
@@ -77,16 +62,12 @@ export const columns = [
 				key: 'providerOperatorCommissionInfos',
 				render: (operatorInfo) => {
 					return operatorInfo.map(({ apiSlabs }) =>
-						apiSlabs.map(({ commissionType }) => <p>{commissionType[0]}</p>)
+						apiSlabs.map(({ commissionType }) => (
+							<div className="row">{commissionType[0]}</div>
+						))
 					);
 				},
-				onCell: () => {
-					return {
-						style: {
-							textAlign: 'center',
-						},
-					};
-				},
+				align: 'center',
 			},
 		],
 	},
@@ -96,9 +77,10 @@ export const columns = [
 		key: 'providerOperatorCommissionInfos',
 		render: (operatorInfo) => {
 			return operatorInfo.map(({ apiSlabs }) =>
-				apiSlabs.map(({ gst }) => <p>{gst}</p>)
+				apiSlabs.map(({ gst }) => <div className="row">{gst}</div>)
 			);
 		},
+		align: 'center',
 	},
 	{
 		title: 'TDS',
@@ -106,9 +88,10 @@ export const columns = [
 		key: 'providerOperatorCommissionInfos',
 		render: (operatorInfo) => {
 			return operatorInfo.map(({ apiSlabs }) =>
-				apiSlabs.map(({ tds }) => <p>{tds}</p>)
+				apiSlabs.map(({ tds }) => <div className="row">{tds}</div>)
 			);
 		},
+		align: 'center',
 	},
 	{
 		title: 'Actions',
@@ -120,12 +103,6 @@ export const columns = [
 				<DeleteOutlined style={{ marginLeft: 15 }} />
 			</div>
 		),
-		onCell: () => {
-			return {
-				style: {
-					textAlign: 'center',
-				},
-			};
-		},
+		align: 'center',
 	},
 ];
